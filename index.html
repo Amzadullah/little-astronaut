@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Little Astronauts · Junior Astronaut Mission Trainer</title>
+  <meta name="description" content="Learn space, design a Mars mission and survive 30 sols. NASA Space Apps Challenge 2026 · Astro Squad.">
+  <meta name="theme-color" content="#14124a">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+  { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  } }
+  </script>
+</head>
+<body>
+  <header id="top"></header>
+  <main id="app"></main>
+
+  <button id="astroFab" class="fab">🤖 <span>Ask Astro</span></button>
+  <aside id="chat" class="chat" aria-label="Astro chat">
+    <div class="chathead">
+      <b id="chatTitle">Astro</b>
+      <div><button id="voiceToggle" class="icon">🔊</button><button id="chatClose" class="icon">✕</button></div>
+    </div>
+    <div id="chatLog" class="chatlog"></div>
+    <form id="chatForm" class="chatform">
+      <button type="button" id="micBtn" class="mic" title="Voice">🎤</button>
+      <input id="chatInput" autocomplete="off" maxlength="500">
+      <button id="sendBtn" class="btn">Send</button>
+    </form>
+  </aside>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

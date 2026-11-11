@@ -1,0 +1,564 @@
+{
+ "meta": {
+  "generated": "2026-11-08",
+  "realData": false,
+  "sources": [
+   "Value ranges from Curiosity REMS & RAD and Perseverance MEDA published results"
+  ],
+  "note": "Modeled on real NASA rover measurements. Run scripts/build_data.py with CSV/DONKI options to load real sol-by-sol data."
+ },
+ "sites": {
+  "gale": {
+   "name": "Gale Crater",
+   "rover": "Curiosity (REMS + RAD)",
+   "sols": [
+    {
+     "sol": 1,
+     "tMax": -4,
+     "tMin": -77,
+     "pressure": 805,
+     "tau": 0.59,
+     "radiation": 0.67,
+     "event": null
+    },
+    {
+     "sol": 2,
+     "tMax": 5,
+     "tMin": -78,
+     "pressure": 828,
+     "tau": 0.6,
+     "radiation": 0.58,
+     "event": null
+    },
+    {
+     "sol": 3,
+     "tMax": 1,
+     "tMin": -79,
+     "pressure": 809,
+     "tau": 0.47,
+     "radiation": 0.66,
+     "event": null
+    },
+    {
+     "sol": 4,
+     "tMax": -1,
+     "tMin": -73,
+     "pressure": 872,
+     "tau": 0.56,
+     "radiation": 0.58,
+     "event": null
+    },
+    {
+     "sol": 5,
+     "tMax": 4,
+     "tMin": -75,
+     "pressure": 809,
+     "tau": 0.64,
+     "radiation": 0.69,
+     "event": null
+    },
+    {
+     "sol": 6,
+     "tMax": -2,
+     "tMin": -77,
+     "pressure": 879,
+     "tau": 0.5,
+     "radiation": 0.65,
+     "event": null
+    },
+    {
+     "sol": 7,
+     "tMax": 4,
+     "tMin": -73,
+     "pressure": 892,
+     "tau": 0.64,
+     "radiation": 1.21,
+     "event": "flare"
+    },
+    {
+     "sol": 8,
+     "tMax": 3,
+     "tMin": -69,
+     "pressure": 853,
+     "tau": 0.65,
+     "radiation": 0.66,
+     "event": null
+    },
+    {
+     "sol": 9,
+     "tMax": -1,
+     "tMin": -75,
+     "pressure": 802,
+     "tau": 0.41,
+     "radiation": 0.61,
+     "event": null
+    },
+    {
+     "sol": 10,
+     "tMax": 0,
+     "tMin": -72,
+     "pressure": 829,
+     "tau": 0.43,
+     "radiation": 0.62,
+     "event": null
+    },
+    {
+     "sol": 11,
+     "tMax": -1,
+     "tMin": -69,
+     "pressure": 856,
+     "tau": 0.46,
+     "radiation": 0.65,
+     "event": null
+    },
+    {
+     "sol": 12,
+     "tMax": -10,
+     "tMin": -69,
+     "pressure": 888,
+     "tau": 2.67,
+     "radiation": 0.66,
+     "event": "dust_storm"
+    },
+    {
+     "sol": 13,
+     "tMax": -4,
+     "tMin": -65,
+     "pressure": 809,
+     "tau": 2.62,
+     "radiation": 0.58,
+     "event": "dust_storm"
+    },
+    {
+     "sol": 14,
+     "tMax": -10,
+     "tMin": -64,
+     "pressure": 871,
+     "tau": 2.12,
+     "radiation": 0.62,
+     "event": "dust_storm"
+    },
+    {
+     "sol": 15,
+     "tMax": -4,
+     "tMin": -69,
+     "pressure": 806,
+     "tau": 2.27,
+     "radiation": 0.61,
+     "event": "dust_storm"
+    },
+    {
+     "sol": 16,
+     "tMax": -3,
+     "tMin": -75,
+     "pressure": 867,
+     "tau": 0.57,
+     "radiation": 0.63,
+     "event": null
+    },
+    {
+     "sol": 17,
+     "tMax": 4,
+     "tMin": -76,
+     "pressure": 783,
+     "tau": 0.47,
+     "radiation": 0.59,
+     "event": null
+    },
+    {
+     "sol": 18,
+     "tMax": 0,
+     "tMin": -73,
+     "pressure": 813,
+     "tau": 0.43,
+     "radiation": 0.59,
+     "event": null
+    },
+    {
+     "sol": 19,
+     "tMax": 3,
+     "tMin": -76,
+     "pressure": 866,
+     "tau": 0.51,
+     "radiation": 0.68,
+     "event": null
+    },
+    {
+     "sol": 20,
+     "tMax": 0,
+     "tMin": -75,
+     "pressure": 821,
+     "tau": 0.4,
+     "radiation": 0.61,
+     "event": null
+    },
+    {
+     "sol": 21,
+     "tMax": -6,
+     "tMin": -78,
+     "pressure": 811,
+     "tau": 0.59,
+     "radiation": 0.69,
+     "event": null
+    },
+    {
+     "sol": 22,
+     "tMax": -4,
+     "tMin": -77,
+     "pressure": 783,
+     "tau": 0.66,
+     "radiation": 4.43,
+     "event": "sep"
+    },
+    {
+     "sol": 23,
+     "tMax": -1,
+     "tMin": -76,
+     "pressure": 780,
+     "tau": 0.49,
+     "radiation": 0.67,
+     "event": null
+    },
+    {
+     "sol": 24,
+     "tMax": 1,
+     "tMin": -77,
+     "pressure": 766,
+     "tau": 0.56,
+     "radiation": 0.62,
+     "event": null
+    },
+    {
+     "sol": 25,
+     "tMax": 3,
+     "tMin": -73,
+     "pressure": 850,
+     "tau": 0.41,
+     "radiation": 0.62,
+     "event": null
+    },
+    {
+     "sol": 26,
+     "tMax": 2,
+     "tMin": -72,
+     "pressure": 777,
+     "tau": 0.42,
+     "radiation": 0.97,
+     "event": "flare"
+    },
+    {
+     "sol": 27,
+     "tMax": 1,
+     "tMin": -80,
+     "pressure": 819,
+     "tau": 0.63,
+     "radiation": 0.65,
+     "event": null
+    },
+    {
+     "sol": 28,
+     "tMax": 3,
+     "tMin": -77,
+     "pressure": 795,
+     "tau": 0.48,
+     "radiation": 0.64,
+     "event": null
+    },
+    {
+     "sol": 29,
+     "tMax": -3,
+     "tMin": -77,
+     "pressure": 876,
+     "tau": 0.62,
+     "radiation": 0.66,
+     "event": null
+    },
+    {
+     "sol": 30,
+     "tMax": 0,
+     "tMin": -79,
+     "pressure": 802,
+     "tau": 0.53,
+     "radiation": 0.62,
+     "event": null
+    }
+   ]
+  },
+  "jezero": {
+   "name": "Jezero Crater",
+   "rover": "Perseverance (MEDA)",
+   "sols": [
+    {
+     "sol": 1,
+     "tMax": -17,
+     "tMin": -78,
+     "pressure": 707,
+     "tau": 0.6,
+     "radiation": 0.64,
+     "event": null
+    },
+    {
+     "sol": 2,
+     "tMax": -18,
+     "tMin": -79,
+     "pressure": 708,
+     "tau": 0.61,
+     "radiation": 0.63,
+     "event": null
+    },
+    {
+     "sol": 3,
+     "tMax": -17,
+     "tMin": -80,
+     "pressure": 758,
+     "tau": 0.52,
+     "radiation": 0.59,
+     "event": null
+    },
+    {
+     "sol": 4,
+     "tMax": -6,
+     "tMin": -74,
+     "pressure": 746,
+     "tau": 0.57,
+     "radiation": 0.63,
+     "event": null
+    },
+    {
+     "sol": 5,
+     "tMax": -17,
+     "tMin": -75,
+     "pressure": 730,
+     "tau": 0.79,
+     "radiation": 0.6,
+     "event": null
+    },
+    {
+     "sol": 6,
+     "tMax": -12,
+     "tMin": -75,
+     "pressure": 725,
+     "tau": 0.54,
+     "radiation": 0.65,
+     "event": null
+    },
+    {
+     "sol": 7,
+     "tMax": -11,
+     "tMin": -78,
+     "pressure": 719,
+     "tau": 0.69,
+     "radiation": 0.99,
+     "event": "flare"
+    },
+    {
+     "sol": 8,
+     "tMax": -9,
+     "tMin": -80,
+     "pressure": 750,
+     "tau": 0.7,
+     "radiation": 0.63,
+     "event": null
+    },
+    {
+     "sol": 9,
+     "tMax": -2,
+     "tMin": -76,
+     "pressure": 729,
+     "tau": 0.59,
+     "radiation": 0.65,
+     "event": null
+    },
+    {
+     "sol": 10,
+     "tMax": -1,
+     "tMin": -76,
+     "pressure": 730,
+     "tau": 0.66,
+     "radiation": 0.7,
+     "event": null
+    },
+    {
+     "sol": 11,
+     "tMax": -10,
+     "tMin": -76,
+     "pressure": 720,
+     "tau": 0.54,
+     "radiation": 0.64,
+     "event": null
+    },
+    {
+     "sol": 12,
+     "tMax": -12,
+     "tMin": -72,
+     "pressure": 761,
+     "tau": 2.6,
+     "radiation": 0.62,
+     "event": "dust_storm"
+    },
+    {
+     "sol": 13,
+     "tMax": -16,
+     "tMin": -74,
+     "pressure": 756,
+     "tau": 2.51,
+     "radiation": 0.69,
+     "event": "dust_storm"
+    },
+    {
+     "sol": 14,
+     "tMax": -26,
+     "tMin": -72,
+     "pressure": 742,
+     "tau": 2.6,
+     "radiation": 0.7,
+     "event": "dust_storm"
+    },
+    {
+     "sol": 15,
+     "tMax": -20,
+     "tMin": -72,
+     "pressure": 701,
+     "tau": 2.14,
+     "radiation": 0.64,
+     "event": "dust_storm"
+    },
+    {
+     "sol": 16,
+     "tMax": -18,
+     "tMin": -85,
+     "pressure": 743,
+     "tau": 0.55,
+     "radiation": 0.6,
+     "event": null
+    },
+    {
+     "sol": 17,
+     "tMax": -13,
+     "tMin": -77,
+     "pressure": 699,
+     "tau": 0.57,
+     "radiation": 0.63,
+     "event": null
+    },
+    {
+     "sol": 18,
+     "tMax": -4,
+     "tMin": -78,
+     "pressure": 743,
+     "tau": 0.66,
+     "radiation": 0.61,
+     "event": null
+    },
+    {
+     "sol": 19,
+     "tMax": -14,
+     "tMin": -78,
+     "pressure": 746,
+     "tau": 0.62,
+     "radiation": 0.6,
+     "event": null
+    },
+    {
+     "sol": 20,
+     "tMax": -17,
+     "tMin": -84,
+     "pressure": 716,
+     "tau": 0.55,
+     "radiation": 0.65,
+     "event": null
+    },
+    {
+     "sol": 21,
+     "tMax": -22,
+     "tMin": -83,
+     "pressure": 708,
+     "tau": 0.58,
+     "radiation": 0.65,
+     "event": null
+    },
+    {
+     "sol": 22,
+     "tMax": -8,
+     "tMin": -82,
+     "pressure": 722,
+     "tau": 0.79,
+     "radiation": 2.77,
+     "event": "sep"
+    },
+    {
+     "sol": 23,
+     "tMax": -6,
+     "tMin": -78,
+     "pressure": 733,
+     "tau": 0.77,
+     "radiation": 0.63,
+     "event": null
+    },
+    {
+     "sol": 24,
+     "tMax": -20,
+     "tMin": -81,
+     "pressure": 689,
+     "tau": 0.62,
+     "radiation": 0.59,
+     "event": null
+    },
+    {
+     "sol": 25,
+     "tMax": -18,
+     "tMin": -83,
+     "pressure": 690,
+     "tau": 0.56,
+     "radiation": 0.58,
+     "event": null
+    },
+    {
+     "sol": 26,
+     "tMax": -19,
+     "tMin": -83,
+     "pressure": 690,
+     "tau": 0.55,
+     "radiation": 1.29,
+     "event": "flare"
+    },
+    {
+     "sol": 27,
+     "tMax": -16,
+     "tMin": -83,
+     "pressure": 713,
+     "tau": 0.54,
+     "radiation": 0.59,
+     "event": null
+    },
+    {
+     "sol": 28,
+     "tMax": -1,
+     "tMin": -81,
+     "pressure": 723,
+     "tau": 0.75,
+     "radiation": 0.59,
+     "event": null
+    },
+    {
+     "sol": 29,
+     "tMax": -14,
+     "tMin": -83,
+     "pressure": 747,
+     "tau": 0.53,
+     "radiation": 0.6,
+     "event": null
+    },
+    {
+     "sol": 30,
+     "tMax": -1,
+     "tMin": -80,
+     "pressure": 709,
+     "tau": 0.51,
+     "radiation": 0.65,
+     "event": null
+    }
+   ]
+  }
+ }
+}

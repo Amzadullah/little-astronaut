@@ -1,0 +1,8 @@
+{
+  "name": "little-astronauts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Junior astronaut mission trainer · NASA Space Apps Challenge 2026 · Astro Squad",
+  "type": "module",
+  "engines": { "node": ">=18" }
+}
