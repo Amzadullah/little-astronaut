@@ -1,77 +1,132 @@
-# 🚀 Little Astronauts — Junior Astronaut Mission Trainer
-**NASA Space Apps Challenge 2026 · Astro Squad (DIU, CIS)**
+# 🚀 Little Astronauts
 
-Learn space in 3D → design a Mars mission → keep a 4-person crew alive for 30 sols, with NASA-based weather & radiation and an AI robot friend (R.O.B.O.) that answers by chat or voice in Bangla or English.
+**A junior astronaut mission trainer game for kids aged 7–14.**
+Kids help a robot friend survive on Mars, with missions built from NASA data, and learn the engineering trade-offs that real missions face.
 
-## Features
-- **🤖 R.O.B.O. on Mars (home screen):** a Talking-Tom style robot friend who lives at Gale Crater
-  - 🦜 **Talk:** whatever the child says, R.O.B.O. repeats it in a funny robot voice
-  - Tap his head, belly, antenna or hands and he reacts. 🍕 Feed him (drag food), 💡 put him to sleep
-  - **Mars missions come up inside the game**, not as a numbered list, and are driven by the sol's NASA-style data:
-    tap the weather station (temperature and pressure), rub dusty solar panels (dust τ), close the habitat in a dust storm,
-    run to the shelter during a solar flare (radiation), hold the heater on freezing nights (min temp), collect rock samples,
-    dig for water ice, fly the Ingenuity-style helicopter, use the recycler, and rub the dust off R.O.B.O.
-  - Every mission ends with a real NASA fact (InSight, Opportunity, Curiosity RAD, Perseverance, Phoenix, Ingenuity)
-  - 🎤 **Help** on every mission: the child asks by voice and Gemini explains how to do it
-  - Missions → XP → **levels** → a 🎁 **gift every level** (new emotes: dance, backflip, moonwalk… and new skins and outfits)
-  - 💬 Ask anything by voice, 🎮 Star Catcher mini-game, 🚀 Learn (3D levels and the Mars mission)
-- **21 levels (0–20)** in 4 stages: Explore, Discover, Understand, Lead. Every level has a 3D scene (Three.js), facts with read-aloud, and a quiz with stars
-- **Mission Design (Level 19):** choose Gale or Jezero Crater, meet the crew (Commander, Engineer, Scientist, Medic), pack 20 cargo points
-- **Mars Outpost (Level 20):** 30 sols of Read → Plan → Act: power, oxygen, water, food, health, morale, radiation, dust storms, solar storms, breakdowns
-- **R.O.B.O. AI chat (Google Gemini):** chat + 🎤 voice question + 🔊 spoken answer, explained for kids. It knows which level or game state the child is on
-- **Rule-based advisor:** gives tips even without internet or an AI key
-- **Firebase:** Google sign-in, so the same progress shows on phone and computer
-- **PWA:** can be installed on a phone like an app
-- **Bangla / English** toggle
+🏆 **NASA Space Apps Challenge 2026** · Challenge: **Build a Junior Astronaut Mission Trainer** · 👩‍🚀 **Team Astro Squad** (Bangladesh)
 
-## Project structure
+### ▶️ [Play now: little-astronaut.vercel.app](https://little-astronaut.vercel.app)
+### 🎬 [Watch the 30-second demo](PASTE_YOUR_YOUTUBE_LINK_HERE)
+
+---
+
+## 🌍 The problem
+
+Space lessons for kids are mostly facts, pictures and videos. Kids watch, but they never make the hard choices that real missions depend on: power or oxygen, go outside or stay safe, repair now or later. Space-themed STEM content often oversimplifies these engineering trade-offs.
+
+## 💡 Our solution
+
+Little Astronauts turns those choices into a game kids already know how to play: a **talking pet**, but one that lives on Mars.
+
+| Feature | What kids do |
+|---|---|
+| 🦜 **Talk** | The robot repeats what the child says, in a funny robot voice |
+| 👆 **Touch & care** | Tap him for giggles and spins, feed him space food, put him to sleep |
+| 🔴 **Mars missions** | Missions come from NASA data and appear inside the game world, not as a numbered list |
+| ⭐ **Level up** | Missions give XP; every level unlocks a gift: 7 emotes, 6 skins, 8 outfits |
+| 🎤 **AI voice help** | Stuck? Ask out loud, and the helper explains in Bangla or English |
+| 🎮 **Star Catcher** | A quick mini-game: catch stars, dodge asteroids |
+| 📚 **Learn mode** | 21 levels of 3D space lessons with quizzes |
+| 🧭 **Mission design + 30 sols** | Plan a Mars mission, then keep a 4-person outpost alive for 30 sols |
+
+## 🛰️ NASA data → game conditions → player decisions
+
+| NASA data | What happens in the game | What the child does |
+|---|---|---|
+| ☀️ **NASA DONKI** solar flares & particle storms (live, last 30 days) | Radiation alert | Runs to the shelter |
+| 🌪️ Dust opacity τ (**Curiosity REMS, Perseverance MEDA** ranges) | Dusty solar panels, dust storms | Cleans the panels, closes the habitat |
+| 🥶 Night temperature & pressure (**REMS, MEDA** ranges) | Freezing nights below −78 °C | Holds the heater, reads the weather station |
+| ☢️ Surface radiation (**Curiosity RAD**) | Radiation dose in the 30-sol outpost | Limits time outside, uses shelter mode |
+| 🔬 **InSight, Opportunity, Perseverance, Phoenix, Ingenuity** | A real NASA fact after every mission | Learns why it matters |
+| 🌙 **NASA LRO** | Moon level facts | Learns about lunar light and ice |
+
+> Solar events are **live** from NASA DONKI (refreshed hourly). Mars surface weather is not available live today, so temperature, pressure and dust follow **published rover ranges**. The in-game **NASA Data** page shows which data is in use.
+
+## 🛠️ How it's built
+
 ```
-index.html, css/, js/          ← the app (no build step)
-api/ask.js                     ← Vercel serverless function → Gemini (keeps the key secret)
-data/mars_sols.json            ← game weather/radiation data
-scripts/build_data.py          ← NASA data → JSON pipeline
-js/firebase-config.js          ← paste the Firebase config here
-firestore.rules                ← database security rules
-manifest.json, sw.js, icons/   ← phone install (PWA)
+Phone / computer browser  ──►  Vercel serverless functions  ──►  NASA DONKI API
+(HTML, CSS, JavaScript,         /api/nasa  (solar events)        Google Gemini API
+ Three.js, Web Speech API)      /api/ask   (AI helper)
+          │
+          └──►  Firebase (Google sign-in + Firestore progress sync)
 ```
 
-## Setup (step by step)
+- ⚡ **No build step:** plain HTML, CSS and JavaScript, so it loads fast on low-cost phones
+- 📱 **Installable (PWA):** "Add to Home screen" works like an app
+- 🔐 **API keys stay on the server:** the browser never sees them
+- 🔄 **Data pipeline:** NASA data → Python (`scripts/build_data.py`) → `data/mars_sols.json` → game engine
 
-### 1. Gemini API key
-1. Go to https://aistudio.google.com/apikey and click **Create API key**
-2. **Never put this key in any file or on GitHub.** Only put it in Vercel (step 4)
+### 📁 Project structure
 
-### 2. Firebase (login + database)
-1. https://console.firebase.google.com → **Add project** (Google Analytics can stay off)
-2. **Build → Authentication → Get started → Sign-in method → Google → Enable**
-3. **Build → Firestore Database → Create database** (Production mode, location `asia-south1`)
-4. On the Firestore **Rules** tab, paste the contents of `firestore.rules` and click **Publish**
-5. **Project settings (⚙️) → Your apps → Web (</>)** → register the app → copy the `firebaseConfig` values into `js/firebase-config.js`
-6. After deploying: **Authentication → Settings → Authorized domains** → add your `xxxx.vercel.app` domain
+```
+index.html            app shell
+css/style.css         all styles
+js/robo.js            robot friend, Mars missions, levels and gifts, Star Catcher
+js/levels.js          21 learning levels (English + Bangla)
+js/scenes.js          Three.js 3D scenes (drawn in code, no image files)
+js/sim.js             mission design + 30-sol outpost simulation
+js/nasa.js            merges live NASA DONKI events into the Mars data
+js/advisor.js         AI chat, voice input and speech output
+js/store.js           progress (localStorage + Firebase)
+api/nasa.js           serverless: NASA DONKI (FLR, SEP, CME)
+api/ask.js            serverless: Google Gemini with child-safety instructions
+data/mars_sols.json   30 sols of Mars conditions (Gale + Jezero)
+scripts/build_data.py NASA data → JSON pipeline
+```
 
-### 3. GitHub
-1. Make a new repository on https://github.com/new (e.g. `little-astronauts`)
-2. **Add file → Upload files** → drag in everything from this folder → **Commit**
+## ▶️ Run it yourself
 
-### 4. Vercel
-1. https://vercel.com → sign in with GitHub → **Add New → Project** → import the repo
-2. Framework Preset: **Other**. Build command: empty
-3. **Environment Variables** → `GEMINI_API_KEY` = your key (optional: `GEMINI_MODEL`)
-4. **Deploy** → you get a link like `https://little-astronauts.vercel.app`
-5. Open it on a phone in Chrome → menu → **Add to Home screen / Install app**
-
-### 5. Real NASA data (optional, recommended for judging)
 ```bash
-# real solar flares / SEP events from NASA DONKI (free key: https://api.nasa.gov)
-NASA_API_KEY=your_key python3 scripts/build_data.py --donki 2024-05-01 2024-05-30
-# real rover weather (CSV from NASA PDS: REMS for Gale, MEDA for Jezero)
-python3 scripts/build_data.py --gale-csv rems.csv --jezero-csv meda.csv
+git clone <this repo>
+cd <repo>
+npx vercel dev
 ```
-Then upload the new `data/mars_sols.json` to GitHub, and Vercel redeploys automatically.
-The default data follows the value ranges published from Curiosity REMS/RAD and Perseverance MEDA. The **NASA Data** page in the app says which data is being used.
 
-## Notes
-- Voice input works best in **Chrome / Edge** (Android and desktop). On iPhone, Safari support is limited
-- Whether Bangla speech output works depends on the phone or computer having a Bangla voice installed. Android Chrome usually has one
-- Without `GEMINI_API_KEY`, the app still works; only the AI chat shows an error
-- Without a Firebase config, progress is saved on the device only
+Environment variables (Vercel → Settings → Environment Variables):
+
+| Name | What it is |
+|---|---|
+| `GEMINI_API_KEY` | Google AI Studio key for the AI helper |
+| `NASA_API_KEY` | Free key from https://api.nasa.gov (falls back to `DEMO_KEY`) |
+
+The Firebase web config goes in `js/firebase-config.js`. Without it, progress is saved on the device only.
+
+## 🧒 Made safe for kids
+
+- 🛡️ The AI helper gives short, simple answers, stays on space and science, and never asks for personal details
+- 🚫 No ads. Google sign-in is optional and only saves game progress. Questions asked to the AI helper are sent to Google Gemini to get an answer
+- 🌐 Works in **Bangla and English**
+
+## 🤖 Use of AI
+
+- Our team created the idea, the challenge plan, the game concept and our first presentation and prototype. We decided every feature.
+- We used **Claude (Anthropic)** as an AI coding assistant to help build and improve the code, write game text and make our slides. We gave the directions, tested everything on phones and computers, and made all final decisions.
+- **Google Gemini** is part of the game as the in-app helper.
+- The demo video narration uses an **AI voice clone (Cartesia)** of a team member's voice, labeled "Voice: AI-generated".
+- No AI-generated images or video are used.
+
+## 📚 Credits & licenses
+
+- NASA DONKI, NASA rover and mission data and facts: NASA (public)
+- [Three.js](https://threejs.org) (MIT License)
+- Google Gemini API, Firebase (Google), Vercel
+- Baloo Da 2 font (Google Fonts, SIL Open Font License)
+- Cartesia (demo video voice)
+
+## 👩‍🚀 Team Astro Squad
+
+Department of CIS, Daffodil International University, Bangladesh 🇧🇩
+
+| Name | ID |
+|---|---|
+| Atul Paul | 252-16-052 |
+| Md. Amzadullah Ratul | 252-16-048 |
+| MD. Shams-Ibne-Mohsin | 252-16-025 |
+| MD. Nuruzzaman Nirob | 252-16-021 |
+| Mosrat Zahan Jabin | 252-16-040 |
+| Shakila Akter | 252-16-034 |
+
+## 📄 License
+
+MIT © 2026 Team Astro Squad
