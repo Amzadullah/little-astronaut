@@ -16,7 +16,7 @@ async function donki(kind, start, end, key) {
 }
 
 export default async function handler(req, res) {
-  const key = process.env.hpmGBcnw8QBRPWzcHRKCkF6thdbpgTdb8L66R8hC || 'DEMO_KEY';
+  const key = process.env.NASA_API_KEY || 'TPLFNRCGb76wkMGnmkfnG6fgzcg7JkRG7gMrJ7hL';
   const endD = new Date();
   const startD = new Date(endD.getTime() - (DAYS - 1) * 864e5);
   const start = iso(startD), end = iso(endD);
