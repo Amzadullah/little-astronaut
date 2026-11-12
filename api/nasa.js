@@ -8,11 +8,20 @@ const DAYS = 30;
 const iso = d => d.toISOString().slice(0, 10);
 
 async function donki(kind, start, end, key) {
-  const url = `https://api.nasa.gov/DONKI/${kind}?startDate=${start}&endDate=${end}&api_key=${key}`;
-  const r = await fetch(url, { headers: { 'User-Agent': 'little-astronauts-app' } });
-  if (!r.ok) throw new Error(`DONKI ${kind}: HTTP ${r.status}`);
-  const t = await r.text();
-  return t.trim() ? JSON.parse(t) : [];
+  const urls = [
+    `https://api.nasa.gov/DONKI/${kind}?startDate=${start}&endDate=${end}&api_key=${key}`,
+    `https://kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get/${kind}?startDate=${start}&endDate=${end}`,
+  ];
+  let lastErr;
+  for (const url of urls) {
+    try {
+      const r = await fetch(url, { headers: { 'User-Agent': 'little-astronauts-app' } });
+      if (!r.ok) throw new Error(`DONKI ${kind}: HTTP ${r.status}`);
+      const t = await r.text();
+      return t.trim() ? JSON.parse(t) : [];
+    } catch (e) { lastErr = e; }
+  }
+  throw lastErr;
 }
 
 export default async function handler(req, res) {
